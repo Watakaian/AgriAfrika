@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="firebase_database_url" translatable="false">https://wazito-ecommerce-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">483241607089</string>
+    <string name="google_api_key" translatable="false">AIzaSyA6_pqa6P574RhG2_Gecf8HNoEJ9chlnKM</string>
+    <string name="google_app_id" translatable="false">1:483241607089:android:0376d8a181cc5c884b0790</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA6_pqa6P574RhG2_Gecf8HNoEJ9chlnKM</string>
+    <string name="google_storage_bucket" translatable="false">wazito-ecommerce.appspot.com</string>
+    <string name="project_id" translatable="false">wazito-ecommerce</string>
+</resources>

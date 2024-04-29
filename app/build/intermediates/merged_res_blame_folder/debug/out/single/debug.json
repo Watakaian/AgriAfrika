@@ -1,0 +1,142 @@
+[
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_animalscreenshot.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\animalscreenshot.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_afriafricacropscreen.jpg.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\afriafricacropscreen.jpg"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_agriafricabuyscreen.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\agriafricabuyscreen.png"
+    },
+    {
+        "merged": "com.example.agriafrica.app-merged_res-5:/drawable_agriafricabuyscreen.png.flat",
+        "source": "com.example.agriafrica.app-main-7:/drawable/agriafricabuyscreen.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_agrianimal.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\agrianimal.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_agricrop.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\agricrop.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_agrisell.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\agrisell.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_agritask.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\agritask.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_morescreenshot.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\morescreenshot.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_agriafricaicon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\agriafricaicon.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-mdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_agriafricasellscreen.jpg.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\agriafricasellscreen.jpg"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_agribuy.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\agribuy.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_taskscreenshot.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\taskscreenshot.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-merged_res-5:\\drawable_agrimore.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\8.0\\com.example.agriafrica.app-main-7:\\drawable\\agrimore.png"
+    }
+]
