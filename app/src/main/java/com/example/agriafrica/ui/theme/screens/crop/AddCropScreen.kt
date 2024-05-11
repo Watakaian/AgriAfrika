@@ -24,7 +24,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
@@ -61,10 +60,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.agriafrica.R
-import com.example.agriafrica.data.AnimalViewModel
 import com.example.agriafrica.data.CropViewModel
 import com.example.agriafrica.navigation.ABOUT_URL
-import com.example.agriafrica.navigation.ADD_TASK
 import com.example.agriafrica.navigation.HOME_URL
 import com.example.agriafrica.navigation.VIEW_CROP
 import com.example.agriafrica.ui.theme.back_green
@@ -313,7 +310,7 @@ fun AddCropScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            var modifier = Modifier
+            val modifier = Modifier
             ImagePicker(modifier,context, navController, cropPlanted.trim(), cropQuantity.trim(), farmPlanted.trim(),cropHandler.trim())
 
 
@@ -336,7 +333,7 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context, navController: 
         }
     )
 
-    Column(modifier = modifier,) {
+    Column(modifier = modifier) {
         if (hasImage && imageUri != null) {
             val bitmap = MediaStore.Images.Media.
             getBitmap(context.contentResolver,imageUri)
@@ -375,7 +372,7 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context, navController: 
 
             Button(onClick = {
                 //-----------WRITE THE UPLOAD LOGIC HERE---------------//
-                var cropRepository = CropViewModel(navController,context)
+                val cropRepository = CropViewModel(navController,context)
                 cropRepository.uploadCrop(name, numbers, location,handler,imageUri!!)
             },
                 shape = RoundedCornerShape(5.dp),

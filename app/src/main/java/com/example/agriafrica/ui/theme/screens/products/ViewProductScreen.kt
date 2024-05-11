@@ -22,8 +22,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Send
-import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -70,14 +70,14 @@ fun ViewProductScreen(navController: NavHostController) {
         .background(back_green)
     ) {
 
-        var context = LocalContext.current
-        var productRepository = ProductViewModel(navController, context)
+        val context = LocalContext.current
+        val productRepository = ProductViewModel(navController, context)
 
 
-        val emptyProductState = remember { mutableStateOf(Product("","","","","","","")) }
-        var emptyProductsListState = remember { mutableStateListOf<Product>() }
+        val emptyProductState = remember { mutableStateOf(Product("","","","","","","","")) }
+        val emptyProductsListState = remember { mutableStateListOf<Product>() }
 
-        var products = productRepository.allProducts(emptyProductState, emptyProductsListState)
+        val products = productRepository.allProducts(emptyProductState, emptyProductsListState)
 
 
         Column(
@@ -182,7 +182,8 @@ fun ViewProductScreen(navController: NavHostController) {
                         navController = navController,
                         productRepository = productRepository,
                         productImage = it.imageUrl,
-                        userId = it.userId
+                        userId = it.userId,
+                        location = it.location,
                     )
                 }
             }
@@ -192,7 +193,7 @@ fun ViewProductScreen(navController: NavHostController) {
 
 
 @Composable
-fun ProductItems(name:String, description:String, price:String, phoneno:String, id:String,userId:String,
+fun ProductItems(name:String, description:String, price:String, phoneno:String,location:String, id:String,userId:String,
                 navController: NavHostController,
                 productRepository: ProductViewModel, productImage:String) {
 
@@ -270,6 +271,26 @@ fun ProductItems(name:String, description:String, price:String, phoneno:String, 
                         }
                     }
                     //end of price and cart row
+                    Spacer(modifier = Modifier.height(3.dp))
+
+                    Row (
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ){
+                        Icon(
+                            imageVector = Icons.Default.LocationOn,
+                            contentDescription = null,
+                            tint = secondary_green
+                            )
+                        Spacer(modifier = Modifier.width(2.dp))
+                        Text(
+                            text = location,
+                            color = secondary_green,
+                            fontSize = 17.sp,
+                            fontWeight = FontWeight.SemiBold,
+                        )
+                    }
+
                     Spacer(modifier = Modifier.height(3.dp))
 
                     //button row

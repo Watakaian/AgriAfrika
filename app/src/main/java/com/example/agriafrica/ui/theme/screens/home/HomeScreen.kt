@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -313,23 +312,26 @@ fun HomeScreen(navController:NavHostController){
                             Column (
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .height(115.dp),
+                                    .height(105.dp),
                                 horizontalAlignment = Alignment.CenterHorizontally,
                                 verticalArrangement = Arrangement.Center
                             ){
                                 Image(
                                     painter = painterResource(id = R.drawable.agrianimal),
-                                    modifier = Modifier.size(95.dp),
+                                    modifier = Modifier.size(90.dp),
                                     contentDescription = null
                                 )
                             }
-
-                            Spacer(modifier = Modifier.width(3.dp))
-
                             Text(
-                                text = "Animal Manager",
+                                text = "Animal",
                                 color = secondary_green,
-                                fontSize = 20.sp,
+                                fontSize = 19.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Text(
+                                text = "Manager",
+                                color = secondary_green,
+                                fontSize = 19.sp,
                                 fontWeight = FontWeight.Bold
                             )
                         }

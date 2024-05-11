@@ -28,7 +28,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
@@ -39,7 +38,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.agriafrica.R
 import com.example.agriafrica.navigation.HOME_URL
-import com.example.agriafrica.ui.theme.back_green
 import com.example.agriafrica.ui.theme.card_green
 import com.example.agriafrica.ui.theme.home_green
 import com.example.agriafrica.ui.theme.secondary_green
@@ -148,7 +146,7 @@ fun AboutScreen(navController: NavHostController) {
 
             Text(
                 text = "You will find products and goods which fellow users of AgriAfrica have " +
-                    "uploaded with their quoted price. You can contact them through text messages " +
+                    "uploaded with their quoted price and location. You can contact them through text messages " +
                     "or call them directly to negotiate on the price and try to strike a deal.",
                 fontSize = 17.sp
             )
@@ -184,8 +182,9 @@ fun AboutScreen(navController: NavHostController) {
             Text(
                 text = "You will be welcomed with a form that allows you to upload your product to " +
                     "the servers to allow buying of your goods by other AgriAfrica users. By clicking" +
-                    " on \"View Products\" button (indicated with orange icon) you will be able to see " +
-                    "all products that you have ever uploaded with your account and allows updating and deleting.",
+                    " on \"View Products\" button (indicated by the orange arrow) you will be able to see " +
+                    "all products that you have ever uploaded with your account and allows updating and deleting" +
+                        " of the same.",
                 fontSize = 17.sp
             )
 
@@ -219,8 +218,8 @@ fun AboutScreen(navController: NavHostController) {
 
             Text(
                 text = "You will be able to have an inventory of all the crops you have planted or are planning to plant." +
-                        "Clicking on the 'Add Crop' button will take you to a form that will allow entry of a new crop into the" +
-                        "inventory. Consider checking out the buy goods screen if you require a certain commodity. This saves your data online but" +
+                        "Clicking on the \"Add Crop\" button will take you to a form that will allow entry of a new crop into the" +
+                        " inventory. Consider checking out the buy goods screen if you require a certain commodity. This saves your data online but" +
                         " but privately allowing access from multiple devices",
                 fontSize = 17.sp
             )
@@ -255,7 +254,7 @@ fun AboutScreen(navController: NavHostController) {
 
             Text(
                 text = "You will be able to have an inventory of all the animals you possess or are planning to possess." +
-                        "Clicking on the 'Add Animal' button will take you to a form that will allow entry of a new animal into the" +
+                        "Clicking on the \"Add Animal\" button will take you to a form that will allow entry of a new animal into the" +
                         " inventory. Consider checking out the buy goods screen if you require a certain commodity." ,
                 fontSize = 17.sp
             )
@@ -289,9 +288,9 @@ fun AboutScreen(navController: NavHostController) {
             Spacer(modifier = Modifier.height(7.dp))
 
             Text(
-                text = "Here you will be able to add tasks(to dos) which may relevant for your farming career." +
-                        "By clicking on the \"Add Task\" you will be able to add a new task. This are saved online and you can" +
-                        "access them from any android device as long as you logged into your account",
+                text = "Here you will be able to add tasks(to dos) which may relevant for your agricultural career." +
+                        " By clicking on the \"Add Task\" you will be able to add a new task. This are saved online and you can" +
+                        " access them from any android device as long as you logged into your account",
                 fontSize = 17.sp
             )
 

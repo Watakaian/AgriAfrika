@@ -1,6 +1,5 @@
 package com.example.agriafrica.ui.theme.screens.products
 
-import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -18,26 +17,20 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Send
-import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
@@ -53,13 +46,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import androidx.core.net.toUri
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberAsyncImagePainter
@@ -69,8 +60,6 @@ import com.example.agriafrica.models.Product
 import com.example.agriafrica.navigation.ABOUT_URL
 import com.example.agriafrica.navigation.ADD_PRODUCTS_URL
 import com.example.agriafrica.navigation.HOME_URL
-import com.example.agriafrica.navigation.ROUTE_UPDATE_PRODUCTS
-import com.example.agriafrica.navigation.VIEW_PRODUCTS_URL
 import com.example.agriafrica.ui.theme.WazitoECommerceTheme
 import com.example.agriafrica.ui.theme.back_green
 import com.example.agriafrica.ui.theme.card_green
@@ -86,13 +75,13 @@ fun ViewProductsScreen(navController:NavHostController) {
         .background(back_green)
     ) {
 
-        var context = LocalContext.current
-        var productRepository = ProductViewModel(navController, context)
+        val context = LocalContext.current
+        val productRepository = ProductViewModel(navController, context)
 
-        val emptyProductState = remember { mutableStateOf(Product("","","","","","","")) }
-        var emptyProductsListState = remember { mutableStateListOf<Product>() }
+        val emptyProductState = remember { mutableStateOf(Product("","","","","","","","")) }
+        val emptyProductsListState = remember { mutableStateListOf<Product>() }
 
-        var products = productRepository.allProduct(emptyProductState, emptyProductsListState)
+        val products = productRepository.allProduct(emptyProductState, emptyProductsListState)
 
 
         Column(
@@ -241,7 +230,8 @@ fun ViewProductsScreen(navController:NavHostController) {
                                 navController = navController,
                                 productRepository = productRepository,
                                 productImage = it.imageUrl,
-                                userId = it.userId
+                                userId = it.userId,
+                                location = it.location
                             )
                         }
                     }
@@ -254,9 +244,8 @@ fun ViewProductsScreen(navController:NavHostController) {
 }
 
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProductItem(name:String, description:String, price:String, phoneno:String, id:String,userId:String,
+fun ProductItem(name:String, description:String, price:String, phoneno:String, location:String, id:String,userId:String,
                  navController: NavHostController,
                  productRepository: ProductViewModel, productImage:String) {
 
@@ -334,6 +323,26 @@ fun ProductItem(name:String, description:String, price:String, phoneno:String, i
                         }
                     }
                     //end of price and cart row
+                    Spacer(modifier = Modifier.height(3.dp))
+
+                    Row (
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ){
+                        Icon(
+                            imageVector = Icons.Default.LocationOn,
+                            contentDescription = null,
+                            tint = secondary_green
+                        )
+                        Spacer(modifier = Modifier.width(2.dp))
+                        Text(
+                            text = location,
+                            color = secondary_green,
+                            fontSize = 17.sp,
+                            fontWeight = FontWeight.SemiBold,
+                        )
+                    }
+
                     Spacer(modifier = Modifier.height(3.dp))
 
                     //button row

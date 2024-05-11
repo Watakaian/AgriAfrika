@@ -16,9 +16,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
@@ -28,16 +26,13 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -51,7 +46,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberAsyncImagePainter
@@ -64,7 +58,6 @@ import com.example.agriafrica.navigation.HOME_URL
 import com.example.agriafrica.ui.theme.back_green
 import com.example.agriafrica.ui.theme.card_green
 import com.example.agriafrica.ui.theme.main_green
-import com.example.agriafrica.ui.theme.screens.animal.AnimalItem
 import com.example.agriafrica.ui.theme.secondary_green
 import com.google.firebase.auth.FirebaseAuth
 
@@ -75,13 +68,13 @@ fun ViewCropScreen(navController: NavHostController) {
         .background(back_green)
     ) {
 
-        var context = LocalContext.current
-        var cropRepository = CropViewModel(navController, context)
+        val context = LocalContext.current
+        val cropRepository = CropViewModel(navController, context)
 
         val emptyCropState = remember { mutableStateOf(Crop("","","","","","","")) }
-        var emptyCropsListState = remember { mutableStateListOf<Crop>() }
+        val emptyCropsListState = remember { mutableStateListOf<Crop>() }
 
-        var crops = cropRepository.allCrops(emptyCropState, emptyCropsListState)
+        val crops = cropRepository.allCrops(emptyCropState, emptyCropsListState)
 
         Column (
             modifier = Modifier
@@ -230,7 +223,6 @@ fun ViewCropScreen(navController: NavHostController) {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CropItem(name:String, numbers:String, location:String, handler:String, id:String, userId:String,
              navController: NavHostController,

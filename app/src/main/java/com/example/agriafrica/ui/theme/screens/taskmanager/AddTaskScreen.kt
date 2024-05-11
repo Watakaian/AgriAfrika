@@ -52,7 +52,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.agriafrica.R
-import com.example.agriafrica.data.ProductViewModel
 import com.example.agriafrica.data.TaskViewModel
 import com.example.agriafrica.navigation.ABOUT_URL
 import com.example.agriafrica.navigation.HOME_URL

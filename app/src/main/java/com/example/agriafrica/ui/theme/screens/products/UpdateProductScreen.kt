@@ -3,7 +3,6 @@ package com.example.agriafrica.ui.theme.screens.products
 import android.content.Context
 import android.net.Uri
 import android.provider.MediaStore
-import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.BorderStroke
@@ -29,6 +28,7 @@ import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -134,7 +134,7 @@ fun UpdateProductScreen(navController: NavHostController){
             //card holding icon
             Card (
                 modifier = Modifier
-                    .size(75.dp),
+                    .size(70.dp),
                 shape = RoundedCornerShape(50),
                 colors = CardDefaults.cardColors(
                     containerColor = card_green
@@ -197,6 +197,7 @@ fun UpdateProductScreen(navController: NavHostController){
         var productDescription by remember { mutableStateOf("") }
         var productPrice by remember { mutableStateOf("") }
         var phoneNumber by remember { mutableStateOf("") }
+        var location by remember { mutableStateOf("") }
         val context = LocalContext.current
 
 
@@ -225,7 +226,7 @@ fun UpdateProductScreen(navController: NavHostController){
             label = { Text(text = "Product Name") }
         )
 
-        Spacer(modifier = Modifier.height(13.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         OutlinedTextField(
             value = productDescription,
@@ -252,7 +253,7 @@ fun UpdateProductScreen(navController: NavHostController){
             label = { Text(text = "Product Description") }
         )
 
-        Spacer(modifier = Modifier.height(13.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         OutlinedTextField(
             value = productPrice,
@@ -279,7 +280,7 @@ fun UpdateProductScreen(navController: NavHostController){
             label = { Text(text = "Product Price (Ksh.)") }
         )
 
-        Spacer(modifier = Modifier.height(13.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         OutlinedTextField(
             value = phoneNumber,
@@ -303,7 +304,34 @@ fun UpdateProductScreen(navController: NavHostController){
                 focusedLabelColor = secondary_green,
                 unfocusedLabelColor = main_green,
             ),
-            label = { Text(text = "Phone Number (+254)") }
+            label = { Text(text = "Phone Number") }
+        )
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        OutlinedTextField(
+            value = location,
+            onValueChange = { location = it },
+            placeholder = { Text(text="eg. EastLeigh,Nairobi") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 15.dp),
+            leadingIcon = {
+                Icon(
+                    imageVector = Icons.Default.LocationOn,
+                    contentDescription = "location icon"
+                )
+            },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = secondary_green,
+                unfocusedBorderColor = main_green,
+                focusedLeadingIconColor = secondary_green,
+                unfocusedLeadingIconColor = main_green,
+                focusedLabelColor = secondary_green,
+                unfocusedLabelColor = main_green,
+            ),
+            label = { Text(text = "Product Location") }
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -312,8 +340,8 @@ fun UpdateProductScreen(navController: NavHostController){
 
         //---------------------IMAGE PICKER START-----------------------------------//
 
-        var modifier = Modifier
-        ImagePick(modifier,context, navController, productName.trim(), productDescription.trim(), productPrice.trim(),phoneNumber.trim(), )
+        val modifier = Modifier
+        ImagePick(modifier,context, navController, productName.trim(), productDescription.trim(), productPrice.trim(),phoneNumber.trim(), location.trim())
 
         //---------------------IMAGE PICKER END-----------------------------------//
 
@@ -323,7 +351,7 @@ fun UpdateProductScreen(navController: NavHostController){
 }
 
 @Composable
-fun ImagePick(modifier: Modifier = Modifier, context: Context, navController: NavHostController, name:String, description:String, price:String, phoneno:String) {
+fun ImagePick(modifier: Modifier = Modifier, context: Context, navController: NavHostController, name:String, description:String, price:String, phoneno:String, location:String) {
     var hasImage by remember { mutableStateOf(false) }
     var imageUri by remember { mutableStateOf<Uri?>(null) }
 
@@ -335,7 +363,7 @@ fun ImagePick(modifier: Modifier = Modifier, context: Context, navController: Na
         }
     )
 
-    Column(modifier = modifier,) {
+    Column(modifier = modifier) {
         if (hasImage && imageUri != null) {
             val bitmap = MediaStore.Images.Media.
             getBitmap(context.contentResolver,imageUri)
@@ -374,8 +402,8 @@ fun ImagePick(modifier: Modifier = Modifier, context: Context, navController: Na
 
             Button(onClick = {
                 //-----------WRITE THE UPLOAD LOGIC HERE---------------//
-                var productRepository = ProductViewModel(navController,context)
-                productRepository.uploadProduct(name, description, price,phoneno,imageUri!!)
+                val productRepository = ProductViewModel(navController,context)
+                productRepository.uploadProduct(name, description, price,phoneno,location,imageUri!!)
             },
                 shape = RoundedCornerShape(5.dp),
                 colors = ButtonDefaults.buttonColors(main_green),

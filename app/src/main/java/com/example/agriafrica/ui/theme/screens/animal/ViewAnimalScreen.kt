@@ -16,24 +16,16 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.List
-import androidx.compose.material.icons.filled.LocationOn
-import androidx.compose.material.icons.filled.Star
-import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
@@ -76,13 +68,13 @@ fun ViewAnimalScreen(navController: NavHostController) {
         .background(back_green)
     ) {
 
-        var context = LocalContext.current
-        var animalRepository = AnimalViewModel(navController, context)
+        val context = LocalContext.current
+        val animalRepository = AnimalViewModel(navController, context)
 
         val emptyAnimalState = remember { mutableStateOf(Animal("","","","","","","")) }
-        var emptyAnimalsListState = remember { mutableStateListOf<Animal>() }
+        val emptyAnimalsListState = remember { mutableStateListOf<Animal>() }
 
-        var animals = animalRepository.allAnimals(emptyAnimalState, emptyAnimalsListState)
+        val animals = animalRepository.allAnimals(emptyAnimalState, emptyAnimalsListState)
 
         Column (
             modifier = Modifier
@@ -228,7 +220,6 @@ fun ViewAnimalScreen(navController: NavHostController) {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AnimalItem(name:String, numbers:String, location:String, handler:String, id:String, userId:String,
                navController: NavHostController,

@@ -24,7 +24,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
@@ -62,7 +61,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.agriafrica.R
 import com.example.agriafrica.data.AnimalViewModel
-import com.example.agriafrica.data.ProductViewModel
 import com.example.agriafrica.navigation.ABOUT_URL
 import com.example.agriafrica.navigation.HOME_URL
 import com.example.agriafrica.navigation.VIEW_ANIMAL
@@ -315,7 +313,7 @@ fun AddAnimalScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            var modifier = Modifier
+            val modifier = Modifier
             ImagePicker(modifier,context, navController, animalName.trim(), animalNumbers.trim(), animalLocation.trim(),animalHandler.trim())
 
 
@@ -338,7 +336,7 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context, navController: 
         }
     )
 
-    Column(modifier = modifier,) {
+    Column(modifier = modifier) {
         if (hasImage && imageUri != null) {
             val bitmap = MediaStore.Images.Media.
             getBitmap(context.contentResolver,imageUri)
@@ -377,7 +375,7 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context, navController: 
 
             Button(onClick = {
                 //-----------WRITE THE UPLOAD LOGIC HERE---------------//
-                var animalRepository = AnimalViewModel(navController,context)
+                val animalRepository = AnimalViewModel(navController,context)
                 animalRepository.uploadAnimal(name, numbers, location,handler,imageUri!!)
             },
                 shape = RoundedCornerShape(5.dp),

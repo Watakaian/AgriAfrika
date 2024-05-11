@@ -313,7 +313,7 @@ fun UpdateAnimalScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            var modifier = Modifier
+            val modifier = Modifier
             ImagePick(modifier,context, navController, animalName.trim(), animalNumbers.trim(), animalLocation.trim(),animalHandler.trim())
 
 
@@ -336,7 +336,7 @@ fun ImagePick(modifier: Modifier = Modifier, context: Context, navController: Na
         }
     )
 
-    Column(modifier = modifier,) {
+    Column(modifier = modifier) {
         if (hasImage && imageUri != null) {
             val bitmap = MediaStore.Images.Media.
             getBitmap(context.contentResolver,imageUri)
@@ -375,7 +375,7 @@ fun ImagePick(modifier: Modifier = Modifier, context: Context, navController: Na
 
             Button(onClick = {
                 //-----------WRITE THE UPLOAD LOGIC HERE---------------//
-                var animalRepository = AnimalViewModel(navController,context)
+                val animalRepository = AnimalViewModel(navController,context)
                 animalRepository.uploadAnimal(name, numbers, location,handler,imageUri!!)
             },
                 shape = RoundedCornerShape(5.dp),

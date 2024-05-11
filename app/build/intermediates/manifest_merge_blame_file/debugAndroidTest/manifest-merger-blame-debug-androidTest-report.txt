@@ -3,24 +3,24 @@
 3    package="com.example.agriafrica.test" >
 4
 5    <uses-sdk
-5-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16890589689566997472.xml:5:5-74
+5-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest295274299031262970.xml:5:5-74
 6        android:minSdkVersion="21"
-6-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16890589689566997472.xml:5:15-41
+6-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest295274299031262970.xml:5:15-41
 7        android:targetSdkVersion="34" />
-7-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16890589689566997472.xml:5:42-71
+7-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest295274299031262970.xml:5:42-71
 8
 9    <instrumentation
-9-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16890589689566997472.xml:11:5-15:72
+9-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest295274299031262970.xml:11:5-15:72
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16890589689566997472.xml:11:22-76
+10-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest295274299031262970.xml:11:22-76
 11        android:functionalTest="false"
-11-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16890589689566997472.xml:14:22-52
+11-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest295274299031262970.xml:14:22-52
 12        android:handleProfiling="false"
-12-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16890589689566997472.xml:13:22-53
+12-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest295274299031262970.xml:13:22-53
 13        android:label="Tests for com.example.agriafrica"
-13-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16890589689566997472.xml:15:22-70
+13-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest295274299031262970.xml:15:22-70
 14        android:targetPackage="com.example.agriafrica" />
-14-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16890589689566997472.xml:12:22-68
+14-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest295274299031262970.xml:12:22-68
 15
 16    <uses-permission android:name="android.permission.REORDER_TASKS" />
 16-->[androidx.test:core:1.5.0] C:\Users\ADMIN\.gradle\caches\transforms-3\2d9a55f75b240318e14182cde1bff713\transformed\core-1.5.0\AndroidManifest.xml:24:5-72
@@ -40,12 +40,12 @@
 22    </queries>
 23
 24    <application
-24-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16890589689566997472.xml:7:5-9:19
+24-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest295274299031262970.xml:7:5-9:19
 25        android:debuggable="true"
 26        android:extractNativeLibs="true" >
 27        <uses-library android:name="android.test.runner" />
-27-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16890589689566997472.xml:8:9-60
-27-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16890589689566997472.xml:8:23-57
+27-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest295274299031262970.xml:8:9-60
+27-->A:\AndroidStudioProjects\FinalProject\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest295274299031262970.xml:8:23-57
 28
 29        <activity
 29-->[androidx.test:core:1.5.0] C:\Users\ADMIN\.gradle\caches\transforms-3\2d9a55f75b240318e14182cde1bff713\transformed\core-1.5.0\AndroidManifest.xml:27:9-34:20

@@ -15,9 +15,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
@@ -69,14 +67,14 @@ fun ViewTaskScreen(navController: NavHostController) {
             .background(back_green)
     ) {
 
-        var context = LocalContext.current
-        var taskRepository = TaskViewModel(navController, context)
+        val context = LocalContext.current
+        val taskRepository = TaskViewModel(navController, context)
 
 
         val emptyTaskState = remember { mutableStateOf(Task("","","","")) }
-        var emptyTasksListState = remember { mutableStateListOf<Task>() }
+        val emptyTasksListState = remember { mutableStateListOf<Task>() }
 
-        var tasks = taskRepository.allTasks(emptyTaskState, emptyTasksListState)
+        val tasks = taskRepository.allTasks(emptyTaskState, emptyTasksListState)
 
         Column (
             modifier = Modifier.padding(horizontal = 12.dp)

@@ -39,7 +39,7 @@ class TaskViewModel(var navController: NavHostController, var context: Context) 
 
         val task = Task(name,description,taskId,userId?:"")
         val databaseRef = FirebaseDatabase.getInstance().getReference()
-            .child("Tasks/$taskId")
+            .child("Agri_Tasks/$taskId")
         databaseRef.setValue(task).addOnCompleteListener {
             progress.dismiss()
             if (it.isSuccessful){
@@ -54,14 +54,14 @@ class TaskViewModel(var navController: NavHostController, var context: Context) 
 
     fun deleteTask(taskId:String){
         val ref = FirebaseDatabase.getInstance().getReference()
-            .child("Tasks/$taskId")
+            .child("Agri_Tasks/$taskId")
         ref.removeValue()
         Toast.makeText(context, "Deleted Successfully", Toast.LENGTH_SHORT).show()
     }
 
     fun updateTask(taskId:String){
         val ref = FirebaseDatabase.getInstance().getReference()
-            .child("Tasks/$taskId")
+            .child("Agri_Tasks/$taskId")
         ref.removeValue()
         navController.navigate(UPDATE_TASK)
     }
@@ -72,7 +72,7 @@ class TaskViewModel(var navController: NavHostController, var context: Context) 
         progress.show()
 
         var ref = FirebaseDatabase.getInstance().getReference()
-            .child("Tasks")
+            .child("Agri_Tasks")
         ref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 tasks.clear()

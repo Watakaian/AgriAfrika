@@ -310,7 +310,7 @@ fun UpdateCropScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            var modifier = Modifier
+            val modifier = Modifier
             ImagePick(modifier,context, navController, cropPlanted.trim(), cropQuantity.trim(), farmPlanted.trim(),cropHandler.trim())
 
 
@@ -333,7 +333,7 @@ fun ImagePick(modifier: Modifier = Modifier, context: Context, navController: Na
         }
     )
 
-    Column(modifier = modifier,) {
+    Column(modifier = modifier) {
         if (hasImage && imageUri != null) {
             val bitmap = MediaStore.Images.Media.
             getBitmap(context.contentResolver,imageUri)
@@ -372,7 +372,7 @@ fun ImagePick(modifier: Modifier = Modifier, context: Context, navController: Na
 
             Button(onClick = {
                 //-----------WRITE THE UPLOAD LOGIC HERE---------------//
-                var cropRepository = CropViewModel(navController,context)
+                val cropRepository = CropViewModel(navController,context)
                 cropRepository.uploadCrop(name, numbers, location,handler,imageUri!!)
             },
                 shape = RoundedCornerShape(5.dp),

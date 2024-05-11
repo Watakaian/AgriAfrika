@@ -31,10 +31,10 @@ class ProductViewModel(var navController:NavHostController, var context: Context
         progress.setMessage("Please wait...")
     }
 
-    fun uploadProduct(name:String, description:String, price:String, phoneno:String,filePath:Uri){
+    fun uploadProduct(name:String, description:String, price:String, phoneno:String, location:String,filePath:Uri){
         val productId = System.currentTimeMillis().toString()
         val storageRef = FirebaseStorage.getInstance().getReference()
-                                .child("Product_s/$productId")
+                                .child("Agri_Products/$productId")
         progress.show()
         storageRef.putFile(filePath).addOnCompleteListener{
             progress.dismiss()
@@ -46,9 +46,9 @@ class ProductViewModel(var navController:NavHostController, var context: Context
                     val currentUser = FirebaseAuth.getInstance().currentUser
                     val userId = currentUser?.uid
 
-                    var product = Product(name,description,price,phoneno,imageUrl,productId,userId?:"")
+                    var product = Product(name,description,price,phoneno,location,imageUrl,productId,userId?:"")
                     var databaseRef = FirebaseDatabase.getInstance().getReference()
-                        .child("Product_s/$productId")
+                        .child("Agri_Products/$productId")
                     databaseRef.setValue(product).addOnCompleteListener {
                         if (it.isSuccessful){
                             navController.navigate(VIEW_PRODUCTS_URL)
@@ -69,7 +69,7 @@ class ProductViewModel(var navController:NavHostController, var context: Context
         products:SnapshotStateList<Product>):SnapshotStateList<Product>{
         progress.show()
         var ref = FirebaseDatabase.getInstance().getReference()
-                    .child("Product_s")
+                    .child("Agri_Products")
         ref.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 products.clear()
@@ -90,14 +90,14 @@ class ProductViewModel(var navController:NavHostController, var context: Context
 
     fun deleteProduct(productId:String){
         var ref = FirebaseDatabase.getInstance().getReference()
-                            .child("Product_s/$productId")
+                            .child("Agri_Products/$productId")
         ref.removeValue()
         Toast.makeText(context, "Deleted Successfully", Toast.LENGTH_SHORT).show()
     }
 
     fun updateProduct(productId:String){
         var ref = FirebaseDatabase.getInstance().getReference()
-            .child("Product_s/$productId")
+            .child("Agri_Products/$productId")
         ref.removeValue()
         navController.navigate(ROUTE_UPDATE_PRODUCTS)
     }
@@ -108,7 +108,7 @@ class ProductViewModel(var navController:NavHostController, var context: Context
         progress.show()
 
         var ref = FirebaseDatabase.getInstance().getReference()
-            .child("Product_s")
+            .child("Agri_Products")
         ref.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 products.clear()

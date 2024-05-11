@@ -28,6 +28,7 @@ import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -132,7 +133,7 @@ fun AddProductsScreen(navController:NavHostController){
             //card holding icon
             Card (
                 modifier = Modifier
-                    .size(75.dp),
+                    .size(70.dp),
                 shape = RoundedCornerShape(50),
                 colors = CardDefaults.cardColors(
                     containerColor = card_green
@@ -195,6 +196,7 @@ fun AddProductsScreen(navController:NavHostController){
         var productDescription by remember { mutableStateOf("") }
         var productPrice by remember { mutableStateOf("") }
         var phoneNumber by remember { mutableStateOf("") }
+        var location by remember { mutableStateOf("") }
         val context = LocalContext.current
 
 
@@ -223,7 +225,7 @@ fun AddProductsScreen(navController:NavHostController){
             label = { Text(text = "Product Name") }
         )
 
-        Spacer(modifier = Modifier.height(13.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         OutlinedTextField(
             value = productDescription,
@@ -250,7 +252,7 @@ fun AddProductsScreen(navController:NavHostController){
             label = { Text(text = "Product Description") }
         )
 
-        Spacer(modifier = Modifier.height(13.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         OutlinedTextField(
             value = productPrice,
@@ -277,7 +279,7 @@ fun AddProductsScreen(navController:NavHostController){
             label = { Text(text = "Product Price (Ksh.)") }
         )
 
-        Spacer(modifier = Modifier.height(13.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         OutlinedTextField(
             value = phoneNumber,
@@ -304,14 +306,41 @@ fun AddProductsScreen(navController:NavHostController){
             label = { Text(text = "Phone Number") }
         )
 
+        Spacer(modifier = Modifier.height(10.dp))
+
+        OutlinedTextField(
+            value = location,
+            onValueChange = { location = it },
+            placeholder = { Text(text="eg. EastLeigh, Nairobi") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 15.dp),
+            leadingIcon = {
+                Icon(
+                    imageVector = Icons.Default.LocationOn,
+                    contentDescription = "location icon"
+                )
+            },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = secondary_green,
+                unfocusedBorderColor = main_green,
+                focusedLeadingIconColor = secondary_green,
+                unfocusedLeadingIconColor = main_green,
+                focusedLabelColor = secondary_green,
+                unfocusedLabelColor = main_green,
+            ),
+            label = { Text(text = "Product Location") }
+        )
+
         Spacer(modifier = Modifier.height(20.dp))
 
 
 
         //---------------------IMAGE PICKER START-----------------------------------//
 
-        var modifier = Modifier
-        ImagePicker(modifier,context, navController, productName.trim(), productDescription.trim(), productPrice.trim(),phoneNumber.trim())
+        val modifier = Modifier
+        ImagePicker(modifier,context, navController, productName.trim(), productDescription.trim(), productPrice.trim(),phoneNumber.trim(),location.trim())
 
         //---------------------IMAGE PICKER END-----------------------------------//
 
@@ -321,7 +350,7 @@ fun AddProductsScreen(navController:NavHostController){
 }
 
 @Composable
-fun ImagePicker(modifier: Modifier = Modifier, context: Context,navController: NavHostController, name:String, description:String, price:String, phoneno:String) {
+fun ImagePicker(modifier: Modifier = Modifier, context: Context,navController: NavHostController, name:String, description:String, price:String, phoneno:String, location:String) {
     var hasImage by remember { mutableStateOf(false) }
     var imageUri by remember { mutableStateOf<Uri?>(null) }
 
@@ -333,7 +362,7 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context,navController: N
         }
     )
 
-    Column(modifier = modifier,) {
+    Column(modifier = modifier) {
         if (hasImage && imageUri != null) {
             val bitmap = MediaStore.Images.Media.
             getBitmap(context.contentResolver,imageUri)
@@ -372,8 +401,8 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context,navController: N
 
             Button(onClick = {
                 //-----------WRITE THE UPLOAD LOGIC HERE---------------//
-                var productRepository = ProductViewModel(navController,context)
-                productRepository.uploadProduct(name, description, price,phoneno,imageUri!!)
+                val productRepository = ProductViewModel(navController,context)
+                productRepository.uploadProduct(name, description, price,phoneno,location,imageUri!!)
             },
                 shape = RoundedCornerShape(5.dp),
                 colors = ButtonDefaults.buttonColors(main_green),

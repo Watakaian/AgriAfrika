@@ -34,7 +34,7 @@ class AnimalViewModel(var navController: NavHostController, var context: Context
     fun uploadAnimal(name:String, numbers:String, location:String, handler:String,filePath: Uri){
         val animalId = System.currentTimeMillis().toString()
         val storageRef = FirebaseStorage.getInstance().getReference()
-            .child("Animals/$animalId")
+            .child("Agri_Animals/$animalId")
         progress.show()
         storageRef.putFile(filePath).addOnCompleteListener{
             progress.dismiss()
@@ -48,7 +48,7 @@ class AnimalViewModel(var navController: NavHostController, var context: Context
 
                     var animal = Animal(name,numbers,location,handler,imageUrl,animalId,userId?:"")
                     var databaseRef = FirebaseDatabase.getInstance().getReference()
-                        .child("Animals/$animalId")
+                        .child("Agri_Animals/$animalId")
                     databaseRef.setValue(animal).addOnCompleteListener {
                         if (it.isSuccessful){
                             navController.navigate(VIEW_ANIMAL)
@@ -67,14 +67,14 @@ class AnimalViewModel(var navController: NavHostController, var context: Context
 
     fun deleteAnimal(animalId:String){
         var ref = FirebaseDatabase.getInstance().getReference()
-            .child("Animals/$animalId")
+            .child("Agri_Animals/$animalId")
         ref.removeValue()
         Toast.makeText(context, "Deleted Successfully", Toast.LENGTH_SHORT).show()
     }
 
     fun updateAnimal(animalId:String){
         var ref = FirebaseDatabase.getInstance().getReference()
-            .child("Animals/$animalId")
+            .child("Agri_Animals/$animalId")
         ref.removeValue()
         navController.navigate(UPDATE_ANIMAL)
     }
@@ -85,7 +85,7 @@ class AnimalViewModel(var navController: NavHostController, var context: Context
         progress.show()
 
         var ref = FirebaseDatabase.getInstance().getReference()
-            .child("Animals")
+            .child("Agri_Animals")
         ref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 animals.clear()

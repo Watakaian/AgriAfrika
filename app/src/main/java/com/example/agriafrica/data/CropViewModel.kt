@@ -34,7 +34,7 @@ class CropViewModel(var navController: NavHostController, var context: Context) 
     fun uploadCrop(name:String, numbers:String, location:String, handler:String,filePath: Uri){
         val cropId = System.currentTimeMillis().toString()
         val storageRef = FirebaseStorage.getInstance().getReference()
-            .child("Crops/$cropId")
+            .child("Agri_Crops/$cropId")
         progress.show()
         storageRef.putFile(filePath).addOnCompleteListener{
             progress.dismiss()
@@ -48,7 +48,7 @@ class CropViewModel(var navController: NavHostController, var context: Context) 
 
                     var crop = Crop(name,numbers,location,handler,imageUrl,cropId,userId?:"")
                     var databaseRef = FirebaseDatabase.getInstance().getReference()
-                        .child("Crops/$cropId")
+                        .child("Agri_Crops/$cropId")
                     databaseRef.setValue(crop).addOnCompleteListener {
                         if (it.isSuccessful){
                             navController.navigate(VIEW_CROP)
@@ -67,14 +67,14 @@ class CropViewModel(var navController: NavHostController, var context: Context) 
 
     fun deleteCrop(cropId:String){
         var ref = FirebaseDatabase.getInstance().getReference()
-            .child("Crops/$cropId")
+            .child("Agri_Crops/$cropId")
         ref.removeValue()
         Toast.makeText(context, "Deleted Successfully", Toast.LENGTH_SHORT).show()
     }
 
     fun updateCrop(cropId:String){
         var ref = FirebaseDatabase.getInstance().getReference()
-            .child("Crops/$cropId")
+            .child("Agri_Crops/$cropId")
         ref.removeValue()
         navController.navigate(UPDATE_CROP)
     }
@@ -86,7 +86,7 @@ class CropViewModel(var navController: NavHostController, var context: Context) 
         progress.show()
 
         var ref = FirebaseDatabase.getInstance().getReference()
-            .child("Crops")
+            .child("Agri_Crops")
         ref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 crops.clear()
